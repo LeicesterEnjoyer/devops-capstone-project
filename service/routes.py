@@ -60,7 +60,18 @@ def create_accounts():
 ######################################################################
 # LIST ALL ACCOUNTS
 ######################################################################
+@app.route("/accounts", methods=["GET"])
+def list_accounts():
+    """
+    Lists all Accounts
+    This endpoint will return a list of all Accounts in the database
+    """
+    app.logger.info("Request to list all Accounts")
 
+    accounts = Account.all()
+    results = [account.serialize() for account in accounts]
+
+    return jsonify(results), status.HTTP_200_OK
 # ... place you code here to LIST accounts ...
 
 
@@ -107,7 +118,6 @@ def update_accounts(account_id):
 ######################################################################
 # DELETE AN ACCOUNT
 ######################################################################
-
 @app.route("/accounts/<int:account_id>", methods=["DELETE"])
 def delete_accounts(account_id):
     """
@@ -120,7 +130,8 @@ def delete_accounts(account_id):
     if account:
         account.delete()
 
-    return "", status.HTTP_204_NO_CONTENT# ... place you code here to DELETE an account ...
+    return "", status.HTTP_204_NO_CONTENT
+# ... place you code here to DELETE an account ...
 
 
 ######################################################################
