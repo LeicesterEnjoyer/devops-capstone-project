@@ -1,5 +1,7 @@
 # devops-capstone-project
 
+![Build Status](https://github.com/<OWNER>/devops-capstone-project/actions/workflows/ci-build.yaml/badge.svg)
+
 The Customer Account Microservice is a robust, RESTful API built to track and manage customer profiles across our e-commerce platform. Designed for seamless integration with other backend microservices, it provides comprehensive account lifecycle management, including secure endpoints to create, read, update, delete, and list customer records.
 
 Engineered for scale and reliability, the service leverages a Python/Flask MVC architecture backed by a PostgreSQL database. It is developed using strict Test-Driven Development (TDD) practices to guarantee a minimum of 95% code coverage, ensuring enterprise-grade stability. The application is fully containerized and Kubernetes-ready, streamlined for automated CI/CD deployments and cloud-native environments.
